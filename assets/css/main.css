@@ -33,10 +33,21 @@ a:active {
 	padding: 10px;
 }
 
+.dropdown label {
+	display: inline-block;
+	padding: 5px 15px;
+	background-color: whitesmoke;
+	cursor: pointer;
+}
+
 .dropdown ul {
 	padding: 0;
 	list-style-position: inside;
-	display: none;
+	/* display: none; */
+	transition: all 0.5s ease-out;
+	max-height: 0px;
+	overflow: hidden;
+	margin: 0;
 }
 
 #dropdown-btn {
@@ -44,5 +55,47 @@ a:active {
 }
 
 #dropdown-btn:checked + ul {
-	display: block;
+	max-height: 100px;
+	margin-top: 10px;
+}
+
+.modal-container {
+	margin-top: 20px;
+}
+
+.modal-container label {
+	display: inline-block;
+	padding: 5px 15px;
+	background-color: black;
+	color: whitesmoke;
+}
+
+.modal-container input {
+	display: none;
+}
+
+.modal-container input:checked + .modal {
+	display: flex;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 100vw;
+	height: 100vh;
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(2px);
+	display: none;
+}
+
+.modal .wrapper {
+	background-color: whitesmoke;
+	max-width: 200px;
+	padding: 10px;
+	border-radius: 15px;
+	text-align: center;
 }
